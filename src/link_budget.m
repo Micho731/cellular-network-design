@@ -1,5 +1,4 @@
 %% Link Budget Analysis
-% Script for Deliverable 2 - File 1
 clear; clc; close all;
 
 % --- Parameters ---
@@ -11,7 +10,9 @@ Lc = 1;         % Connector Loss (dB)
 Lb = 3;         % Body Loss (dB)
 Lp = 10;        % Penetration Loss (dB)
 Li = 2;         % Implementation Loss (dB)
-Ms = 6;         % Shadowing Margin (dB)
+sigma = 6;      % Shadowing std dev (dB)
+P_edge = 0.95;  % Target cell-edge coverage
+Ms = sqrt(2)*sigma*erfcinv(2*(1 - P_edge));   % Shadowing Margin (dB) = 1.645*sigma = 9.87 dB
 Mf = 3;         % Fast Fading Margin (dB)
 Pmin = -100;    % Rx Sensitivity (dBm)
 n = 3.5;        % Path Loss Exponent
@@ -45,6 +46,7 @@ fprintf('Path Loss at 1km:    %.2f dB\n', PL(end));
 fprintf('Received Power (1km):%.2f dBm\n', Pr(end));
 fprintf('Noise Floor:         %.2f dBm\n', N_floor);
 fprintf('SNR at Cell Edge:    %.2f dB\n', SNR);
+fprintf('Shadowing Margin:    %.2f dB (%.0f %% edge coverage)\n', Ms, 100*P_edge);
 fprintf('Link Margin:         %.2f dB\n', Pr(end) - Pmin);
 fprintf('========================================\n');
 
@@ -60,7 +62,7 @@ saveas(gcf, 'Figure2_Pr_vs_Distance.png');
 % --- Plot Figure 3: Coverage Analysis ---
 figure(3);
 plot(d, Pr, 'b', 'LineWidth', 2); hold on;
-yline(N_floor, 'k--', 'Noise Floor (-114 dBm)', 'LabelHorizontalAlignment', 'right');
+yline(N_floor, 'k--', sprintf('Noise Floor (%.0f dBm)', N_floor), 'LabelHorizontalAlignment', 'right');
 yline(Pmin, 'r:', 'Rx Sensitivity (-100 dBm)', 'LabelHorizontalAlignment', 'right');
 xlabel('Distance (m)');
 ylabel('Power Level (dBm)');

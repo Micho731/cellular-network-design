@@ -1,5 +1,4 @@
 %% Large and Small Scale Fading Simulation
-% Script for Deliverable 2 - File 3
 clear; clc; close all;
 
 % --- Part A: Large-Scale Fading (Shadowing) ---
@@ -10,7 +9,9 @@ sigma = 6;                      % Shadowing std dev (dB)
 X_sigma = sigma * randn(size(d)); % Log-normal shadowing
 
 % System parameters for Pr
-Pt = 43; Gt = 15; Gr = 0; L_total = 27;
+Pt = 43; Gt = 15; Gr = 0;
+Ms = sqrt(2)*sigma*erfcinv(2*(1 - 0.95));        % 95 % edge-coverage margin, 9.87 dB
+L_total = 2 + 1 + 3 + 10 + 2 + Ms + 3;           % same losses as link_budget.m
 Pr_mean = Pt + Gt + Gr - L_total - PL_mean;
 Pr_shadow = Pr_mean + X_sigma;
 

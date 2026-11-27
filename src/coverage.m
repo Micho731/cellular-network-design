@@ -1,20 +1,16 @@
 %% Shadowing margin vs cell-edge coverage
-% Added in the 2026 review (not part of the original scripts).
-%
 % With log-normal shadowing of standard deviation sigma, a fade margin M
 % keeps the cell-edge signal above threshold with probability
 %     P = 1 - Q(M/sigma),  Q(x) = 0.5*erfc(x/sqrt(2)).
-% The design uses M = 6 dB with sigma = 6 dB. This script computes the
-% real edge coverage, the margin 95 % needs, checks both by Monte Carlo,
-% and re-runs the link budget with the larger margin.
-%
+% Finds the margin for 95 % edge coverage, checks it by Monte Carlo and
+% shows the link budget closes with it.
 % Runs in MATLAB or GNU Octave, no toolboxes.
 
 clear; clc; close all;
 rng(1);
 
 sigma  = 6;          % dB
-M_used = 6;          % dB, shadowing margin in the original budget
+M_used = 6;          % dB, 1 sigma (for comparison)
 target = 0.95;
 
 Qf   = @(x) 0.5*erfc(x/sqrt(2));

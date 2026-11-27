@@ -1,5 +1,4 @@
 %% Interference Analysis
-% Script for Deliverable 2 - File 2
 clear; clc; close all;
 
 % --- Parameters ---
