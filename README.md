@@ -5,7 +5,7 @@ End-to-end design of a cellular network for a 25 km² dense urban area: frequenc
 **Built:** May–June 2026 · Wireless Communications course project · Documented 2026
 
 <p align="center">
-  <img src="media/design_review.png" width="49%" alt="Users per cell vs SIR for every cluster size and sector layout">
+  <img src="media/design_space.png" width="49%" alt="Users per cell vs SIR for every cluster size and sector layout">
   <img src="media/Figure8_BER.png" width="49%" alt="QPSK bit error rate, simulated vs theory, AWGN and Rayleigh">
 </p>
 
