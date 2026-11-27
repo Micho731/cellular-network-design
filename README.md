@@ -2,7 +2,7 @@
 
 End-to-end design of a cellular network for a 25 km² dense urban area: frequency reuse, co-channel interference, link budget, noise, Erlang-B capacity per sector, shadowing and fading, with the QPSK link checked by Monte Carlo simulation.
 
-**Built:** May–June 2026 · Wireless Communications course project · Documented 2026
+**Built:** May–June 2026 · Wireless Communications course project
 
 <p align="center">
   <img src="media/design_space.png" width="49%" alt="Users per cell vs SIR for every cluster size and sector layout">
