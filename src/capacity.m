@@ -74,7 +74,7 @@ ylim(yl); xlim([7 25]); grid on; box on;
 xlabel('SIR (dB)'); ylabel('Users per cell at 2% blocking');
 title('Capacity vs interference for every cluster size and sector layout');
 legend(layouts, 'Location', 'northeast');
-saveas(gcf, '../media/design_review.png');
+saveas(gcf, '../media/design_space.png');
 
 function A = erlang_capacity(C, Pb)
 % Largest offered traffic A with Erlang-B blocking <= Pb (bisection).
