@@ -92,4 +92,4 @@ MATLAB R2016b or newer, no toolboxes.
 
 ## Author
 
-**Michel Salame** — designed the network and wrote the MATLAB analysis and simulations. [LinkedIn](https://www.linkedin.com/in/michel-salame)
+**Michel Salame** — [LinkedIn](https://www.linkedin.com/in/michel-salame)
